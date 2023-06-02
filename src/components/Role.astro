@@ -1,0 +1,31 @@
+---
+export interface Props {
+	position: string;
+	company: string;
+	description: string;
+	url?: string;
+    tags: string[];
+    from: string;
+    to: string;
+}
+
+const { url, company, description, from, to, tags, position } = Astro.props;
+---
+
+<li class="job-role">
+    <h2>
+        {position} at {url !== '' ? <a target="_blank" rel="noopener" href={url} class="u--link-external">{company}</a> : {company}}
+    </h2>
+    <p>From {from} to {to}</p>
+    <p>
+        {description}
+    </p>
+    {tags.map((tag, index) => {
+        return (<span>{tag}{index !== tags.length - 1 && ', '}</span>)
+    })}
+</li>
+<style>
+	li {
+        list-style: none;
+    }
+</style>
