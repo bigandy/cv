@@ -1,0 +1,52 @@
+<div class="absolute left-4 top-4" id="toggleIt">
+  <label class="relative inline-flex items-center cursor-pointer theme-switch">
+    <input type="checkbox" value="" class="sr-only peer" id="checkbox" />
+    <div
+      class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"
+    >
+    </div>
+    <span
+      class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300"
+      id="toggle-text"></span>
+  </label>
+</div>
+<script>
+  // Get the theme toggle input
+  const themeToggle = document.querySelector("input");
+  const currentTheme = localStorage.getItem("theme");
+  const element = document.querySelector("html");
+  const text = document.querySelector("#toggle-text");
+
+  // If the current local storage item can be found
+  if (currentTheme && themeToggle && text) {
+    // Set the body data-theme attribute to match the local storage item
+    element && element.setAttribute("class", currentTheme);
+
+    // If the current theme is dark, check the theme toggle
+    if (currentTheme === "dark") {
+      themeToggle.checked = true;
+      text.innerHTML = "🌙";
+    } else {
+      text.innerHTML = "🌞";
+    }
+  } else {
+    element && element.setAttribute("class", "light");
+  }
+
+  // Function that will switch the theme based on the if the theme toggle is checked or not
+  const switchTheme = (e: Event) => {
+    if (text) {
+      // @ts-ignore
+      const ischecked = e.target.checked;
+      if (ischecked) {
+        text.innerHTML = "🌙";
+        element && element.setAttribute("class", "dark");
+      } else {
+        text.innerHTML = "🌞";
+        element && element.setAttribute("class", "light");
+        localStorage.setItem("theme", "light");
+      }
+    }
+  };
+  themeToggle && themeToggle.addEventListener("change", switchTheme, false);
+</script>

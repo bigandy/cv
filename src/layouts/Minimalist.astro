@@ -1,0 +1,42 @@
+---
+import "@fontsource/poppins";
+import Download from "../components/Download.astro";
+import Experience from "../components/Experience";
+import Skills from "../components/Skills.astro";
+import Social from "../components/Social.astro";
+import "../styles.css";
+import ThemeToggle from "../components/ThemeToggle.astro";
+
+const { title, pdfLink, noIndex } = Astro.props.frontmatter;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    {noIndex && <meta name="robots" content="noindex" />}
+    <title>{title}</title>
+  </head>
+  <body class="bg-orange-50 dark:bg-sky-900 my-0 sm:my-14">
+    <div class="container flex justify-center mx-auto">
+      <article class="relative minimalist">
+        {
+          pdfLink && (
+            <div id="download" class="not-prose absolute right-4 top-4">
+              <Download href={pdfLink} />
+            </div>
+          )
+        }
+        <ThemeToggle />
+        <slot />
+        <Experience />
+        <Skills />
+        <Social />
+      </article>
+    </div>
+    <style></style>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+---
+import data from "../data";
+
+import { uniqueArrayItems } from '../utils'
+
+const uniqSkills = uniqueArrayItems(data.flatMap((time) => time.skills));
+---
+
+<div class="pt-1">
+  <h3>Skills & Technologies</h3>
+  {
+    uniqSkills.map((skill, index) => {
+      return uniqSkills.length - 1 == index ? (
+        <span>{skill}</span>
+      ) : (
+        <span>{skill} | </span>
+      );
+    })
+  }
+</div>

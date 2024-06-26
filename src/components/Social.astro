@@ -1,0 +1,36 @@
+---
+const socials: {
+  iconPath: string;
+  href: string;
+  name: string;
+  styles?: any;
+}[] = [
+  {
+    href: "https://www.linkedin.com/in/andrew-hudson-software-engineer/",
+    name: "linkedIn",
+    iconPath: "li.png",
+  },
+  {
+    href: "https://github.com/bigandy",
+    name: "github",
+    iconPath: "gh.svg",
+  },
+];
+---
+
+<style></style>
+
+<div class="flex flex-wrap justify-center items-center">
+  {
+    socials.map((social, index) => (
+      <div class="p-4">
+        <a href={social.href}>
+          <div
+            class="icon w-8 h-8 dark:bg-white bg-black"
+            style={`-webkit-mask: url(/${social.iconPath}) no-repeat center / contain; `}
+          />
+        </a>
+      </div>
+    ))
+  }
+</div>
