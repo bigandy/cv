@@ -14,7 +14,7 @@
   "devDependencies": {
     "@astrojs/tailwind": "5.1.0",
     "@fontsource/poppins": "^4.5.10",
-    "@tailwindcss/typography": "^0.5.8",
+    "@tailwindcss/typography": "^0.5.13",
     "@types/node": "^18.11.10",
     "astro": "4.11.3",
     "prettier": "3.3.2",
