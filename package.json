@@ -7,6 +7,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "generate-pdf": "ts-node --project tsconfig-pdf.json ./scripts/generate-pdf.js",
+    "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
