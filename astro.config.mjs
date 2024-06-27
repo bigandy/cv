@@ -11,7 +11,7 @@ export default defineConfig({
   integrations: [tailwind(), react()],
   vite: {
     ssr: {
-      external: ["svgo"]
-    }
-  }
+      external: ["svgo"],
+    },
+  },
 });

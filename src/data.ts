@@ -98,7 +98,7 @@ const data: {
       "Prisma",
       "Next.js",
       "SEO",
-      "Wordpress",
+      "WordPress",
       "Electron",
     ],
     place: "Venture Harbour",

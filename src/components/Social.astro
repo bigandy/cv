@@ -22,12 +22,12 @@ const socials: {
 
 <div class="flex flex-wrap justify-center items-center">
   {
-    socials.map((social, index) => (
+    socials.map((social) => (
       <div class="p-4">
         <a href={social.href}>
           <div
             class="icon w-8 h-8 dark:bg-white bg-black"
-            style={`-webkit-mask: url(/${social.iconPath}) no-repeat center / contain; `}
+            style={`mask: url(/${social.iconPath}) no-repeat center / contain;`}
           />
         </a>
       </div>

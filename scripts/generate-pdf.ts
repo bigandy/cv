@@ -5,7 +5,7 @@ import { chromium } from "playwright";
   const browser = await chromium.launch();
   const page = await browser.newPage();
 
-  await page.goto("http://127.0.0.1:3000/", { waitUntil: "networkidle" });
+  await page.goto("http://127.0.0.1:4321/", { waitUntil: "networkidle" });
 
   await page.pdf({
     path: "public/cv.pdf",
