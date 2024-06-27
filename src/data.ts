@@ -148,7 +148,7 @@ const data: {
     timelineStart: new Date(1992, 8),
     timelineEnd: new Date(1999, 6),
     skills: [],
-    place: "Bristol",
+    place: "Crowthorne",
     description: "Grades A - C",
   },
 ];

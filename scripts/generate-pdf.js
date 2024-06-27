@@ -1,11 +1,15 @@
-// @ts-nocheck
 import { chromium } from "playwright";
 
 (async () => {
   const browser = await chromium.launch();
   const page = await browser.newPage();
 
-  await page.goto("http://127.0.0.1:4321/", { waitUntil: "networkidle" });
+  await page.goto("http://localhost:4321/", { waitUntil: "networkidle" });
+
+
+  // Turn on Print CSS
+  await page.emulateMedia({ media: 'print' });
+
 
   await page.pdf({
     path: "public/cv.pdf",

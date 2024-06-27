@@ -28,8 +28,18 @@ article.minimalist {
   }
   #download {
     visibility: visible;
+    display: none;
   }
   #toggleIt {
     visibility: hidden;
+  }
+
+  h1 {
+    /* reset-layer; */
+    text-decoration-line: none !important;
+  }
+
+  .socials-list {
+    display: none;
   }
 }
