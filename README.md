@@ -1,18 +1,12 @@
-# sv
+# Andrew Hudson's CV
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+[https://cv.andrewhudson.dev/](https://cv.andrewhudson.dev/)
 
-## Creating a project
+## Inspiration
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
-```
+- https://resume.henry.codes/
+- https://read.cv/joebell
+- https://cv.royletron.dev/
 
 ## Developing
 
