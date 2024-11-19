@@ -141,7 +141,7 @@
 	<li>Location: {contact.location.city}, {contact.location.country}</li>
 	<li>Email: <a href="mailto: {contact.email}">{contact.email}</a></li>
 	<li>Telephone: <a href="tel:{contact.telephone}">{contact.telephone}</a></li>
-	<li>Website: <a href={contact.url}>{contact.url}</a></li>
+	<li>Website: <a href={contact.url}>{contact.url.replace('https://', '')}</a></li>
 </ul>
 
 <p>
