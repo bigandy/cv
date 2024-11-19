@@ -1,5 +1,18 @@
 <script lang="ts">
-	const roles = {
+	type Role = {
+		title: string;
+		company: string;
+		dates: {
+			start: string; // change to Date?
+			end: string; // change to Date?
+		};
+		url: string;
+		location: string;
+		summaries: Array<string>;
+		skills?: Array<string>;
+	};
+
+	const roles: { [key: string]: Role } = {
 		scalable: {
 			title: 'Senior Front-end Engineer',
 			company: 'Scalable',
@@ -16,7 +29,8 @@
 				'Creating new features and speccing out API changes with the backend team',
 				'Creating API contract with the backend API developer',
 				'Mocking data with express to simulate the API response until backend finished API work'
-			]
+			],
+			skills: ['react', 'd3', 'css-in-js', 'jest', 'project management']
 		},
 		ventureHarbour: {
 			title: 'Senior Front-end Engineer',
@@ -32,11 +46,12 @@
 				'Break down problems into solutions and solutions into tasks, creating prototypes when required.',
 				'Desktop Application and Browser Extension development.',
 				'Optimise Performance of each of our sites and products and automate testing and CI for each deployment.'
-			]
+			],
+			skills: []
 		},
 		taylorAndFrancis: {
 			title: 'Full Stack Web Developer',
-			company: 'Taylor &amp; Francis',
+			company: 'Taylor & Francis',
 			dates: {
 				start: '2016-10-01',
 				end: '2017-17-01'
@@ -47,7 +62,8 @@
 				'I created custom performant WordPress and Expression Engine sites.',
 				'I hand-crafted a node tool to benchmark and monitor Business Sites using the Web Page Test API and display with React.',
 				'Perform performance audits and carry out improvements on business and society sites.'
-			]
+			],
+			skills: []
 		},
 		photoCrowd: {
 			title: 'Front-end React Developer',
@@ -62,7 +78,8 @@
 				'I created new components and pages using React/Relay and Less from Photoshop designs.',
 				'I implementing Webpack into the development process to allow for code modularity, linting, and writing future JS (ES2015) code with Babel.',
 				'Applied BEM code methodology for new CSS components.'
-			]
+			],
+			skills: []
 		},
 		electricStudio: {
 			title: 'Front-end and WordPress Developer',
@@ -77,7 +94,8 @@
 				'I created highly customised WordPress sites from Photoshop    designs, with custom post-types, taxonomies, meta boxes, shortcodes and functions.',
 				'The sites were performant, using best practices and technologies, built within budget and in timeframes.',
 				'Pre-launch client training, dealing with any client feedback via Basecamp or telephone.'
-			]
+			],
+			skills: []
 		},
 		heathWallace: {
 			title: 'Creative UI Developer',
@@ -92,7 +110,27 @@
 				'I built highly accessible websites for clients including HSBC, RBS and Grant Thornton.',
 				'Using CMSs such as WordPress, CQ5 and Sitecore to allow the client to control all content on their site.',
 				'Knowledge Sharing through weekly masterclass sessions (I ran three: WordPress; CSS3; and Sass).'
+			],
+			skills: [
+				'css',
+				'WordPress',
+				'cq5',
+				'SiteCore',
+				'JS',
+				'jQuery',
+				'sass',
+				'content management systems'
 			]
+		}
+	};
+
+	const contact = {
+		email: 'ahudson@gmail.com',
+		telephone: '+33 608985800',
+		url: 'cv.andrewhudson.dev',
+		location: {
+			city: 'Grenoble',
+			country: 'France'
 		}
 	};
 </script>
@@ -100,10 +138,10 @@
 <h1>Andrew JD Hudson - Cirriculum Vitae</h1>
 
 <ul>
-	<li>Location: Grenoble, France</li>
-	<li>Email: ahudson@gmail.com</li>
-	<li>Telephone: +33 608985800</li>
-	<li>Website: cv.andrewhudson.dev</li>
+	<li>Location: {contact.location.city}, {contact.location.country}</li>
+	<li>Email: <a href="mailto: {contact.email}">{contact.email}</a></li>
+	<li>Telephone: <a href="tel:{contact.telephone}">{contact.telephone}</a></li>
+	<li>Website: <a href={contact.url}>{contact.url}</a></li>
 </ul>
 
 <p>
@@ -113,7 +151,7 @@
 
 <h2>Experience</h2>
 
-<ol>
+<ol reversed>
 	{#each Object.values(roles) as role}
 		<li>{role.title} - {role.company}</li>
 	{/each}
