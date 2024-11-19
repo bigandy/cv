@@ -154,3 +154,10 @@
 	I am a keen outdoor enthusiast and I regularly cycle, run and hike in Grenoble's stunning outdoor
 	spaces. Currently I am learning French and have a 200+ day streak on Duolingo.
 </p>
+
+<style>
+	h1,
+	h2 {
+		font-family: var(--heading-font);
+	}
+</style>

@@ -24,6 +24,11 @@
 		font-stretch: normal;
 	}
 
+	:root {
+		--heading-font: 'Fraunces', serif;
+		--body-font: 'Work Sans', serif;
+	}
+
 	main {
 		max-inline-size: 799px;
 		margin-inline: auto;
