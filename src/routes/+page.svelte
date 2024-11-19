@@ -127,7 +127,7 @@
 	const contact = {
 		email: 'ahudson@gmail.com',
 		telephone: '+33 608985800',
-		url: 'cv.andrewhudson.dev',
+		url: 'https://cv.andrewhudson.dev',
 		location: {
 			city: 'Grenoble',
 			country: 'France'
