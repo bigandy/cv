@@ -8,8 +8,8 @@
 </ul>
 
 <p>
-	I am a experienced front-end javascript developer based in Grenoble, France, looking to create
-	exciting and useful products and services on the web.
+	I am a experienced front-end and javascript developer based in Grenoble, France, looking to create
+	exciting and useful products and services in places that are powered by JavaScript, HTML and CSS.
 </p>
 
 <h2>Experience</h2>
