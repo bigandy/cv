@@ -126,14 +126,31 @@
 
 	const contact = {
 		email: 'ahudson@gmail.com',
-		telephone: '+33 608985800',
+		telephone: '+33 6 08 98 58 00',
 		url: 'https://cv.andrewhudson.dev',
 		location: {
 			city: 'Grenoble',
 			country: 'France'
 		}
 	};
+
+	const seo = {
+		title: 'Andrew JD Hudson - Senior Front-end and Javascript Developer in Grenoble, France',
+		description: 'Online Resume of Andrew JD Hudson',
+		short_description: 'Andrew JD Hudson - Senior Javascript Developer in Grenoble, France'
+	};
 </script>
+
+<svelte:head>
+	<title>{seo.title}</title>
+
+	<meta name="description" content={seo.description} />
+
+	<meta property="og:site_name" content={seo.short_description} />
+	<meta property="og:title" content={seo.short_description} />
+	<meta property="og:description" content={seo.description} />
+	<meta property="og:url" content={contact.url} />
+</svelte:head>
 
 <h1>Andrew JD Hudson - Cirriculum Vitae</h1>
 
