@@ -32,6 +32,6 @@
 	main {
 		max-inline-size: 799px;
 		margin-inline: auto;
-		font-family: 'Work Sans';
+		font-family: var(--body-font);
 	}
 </style>

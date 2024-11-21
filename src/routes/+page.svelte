@@ -139,6 +139,46 @@
 		description: 'Online Resume of Andrew JD Hudson',
 		short_description: 'Andrew JD Hudson - Senior Javascript Developer in Grenoble, France'
 	};
+
+	const headline = `I am a experienced front-end and javascript developer based in Grenoble, France, looking to create exciting and useful products and services in places that are powered by JavaScript, HTML and CSS.`;
+
+	interface Site {
+		url: string;
+		title: string;
+		description: string;
+	}
+
+	const sites: Site[] = [
+		{
+			url: 'https://www.scalable.com/',
+			title: 'Acumen',
+			description:
+				'a digital experience web app for visualising Productivity and Digital Workplace Efficiency using React, Typescript, and D3.'
+		},
+		{
+			url: 'https://truenorth.io/',
+			title: 'TrueNorth',
+			description:
+				'a marketing web app using NextJS, Typescript, GraphQL, Apollo, Prisma, with a Material-UI based component library.'
+		},
+		{
+			url: 'https://sereneapp.com/',
+			title: 'Serene App',
+			description:
+				'Productivity Application for MacOS users using Electron, Firebase, and React. With companion Chrome, Firefox and Edge extensions.'
+		},
+		{
+			url: 'https://photocrowd.com/',
+			title: 'PhotoCrowd',
+			description:
+				'Photography social media product built using React, Django, Relay, Less, and webpack'
+		},
+		{
+			url: 'https://photocrowd.com/',
+			title: 'PhotoCrowd',
+			description: 'Photography social media product built using React, Relay, Less, and webpack'
+		}
+	];
 </script>
 
 <svelte:head>
@@ -152,6 +192,8 @@
 	<meta property="og:url" content={contact.url} />
 </svelte:head>
 
+<a href="/andrew-hudson-cv.pdf" download>Download CV as a PDF</a>
+
 <h1>Andrew JD Hudson - Cirriculum Vitae</h1>
 
 <ul>
@@ -161,10 +203,7 @@
 	<li>Website: <a href={contact.url}>{contact.url.replace('https://', '')}</a></li>
 </ul>
 
-<p>
-	I am a experienced front-end and javascript developer based in Grenoble, France, looking to create
-	exciting and useful products and services in places that are powered by JavaScript, HTML and CSS.
-</p>
+<p>{headline}</p>
 
 <h2>Experience</h2>
 
@@ -177,12 +216,15 @@
 <h2>Relevant Projects and Websites</h2>
 
 <ul>
-	<li>Acumen</li>
+	{#each sites as site}
+		<li><a href={site.url}>{site.title}</a> - {site.description}</li>
+	{/each}
+	<!-- <li>Acumen</li>
 	<li>TrueNorth</li>
 	<li>Serene</li>
 	<li>Venture Harbour</li>
 	<li>Codepen</li>
-	<li>My Site</li>
+	<li>My Site</li> -->
 </ul>
 
 <h2>Skills</h2>
